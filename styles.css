@@ -2,6 +2,10 @@ html {
   font-family: sans-serif;
 }
 
+h1 {
+  color: darkslateblue;
+}
+
 body {
   width: 50%;
   max-width: 800px;
