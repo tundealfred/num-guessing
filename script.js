@@ -29,7 +29,7 @@ function checkGuess() {
     lastResult.style.backgroundColor = "red";
     if (userGuess < randomNumber) {
       lowOrHi.textContent = "Last guess was too LOW!";
-    } else if (user > randomNumber) {
+    } else if (userGuess > randomNumber) {
       lowOrHi.textContent = "Last guess was too HIGH!";
     }
   }
@@ -53,19 +53,16 @@ function setGameOver() {
 function resetGame() {
   guessCount = 1;
 
-  const resetParas = document.querySelectorAll(".displayResult p");
-  for (const resetPara of resetParas) {
-    resetPara.textContent = "";
+  const displayResult = document.querySelectorAll(".displayResult p");
+  for (const displayResult of displayResult) {
+    displayResult.textContent = "";
   }
 
   resetButton.parentNode.removeChild(resetButton);
-
   guessField.disabled = false;
   guessSubmit.disabled = false;
   guessField.value = "";
   guessField.focus();
-
   lastResult.style.backgroundColor = "white";
-
   randomNumber = Math.floor(Math.random() * 100) + 1;
 }
